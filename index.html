@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体查询</title>
+    <style>
+        .container {
+            margin: auto;
+        }
+        
+        .container>div {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: white;
+        }
+        
+        .one {
+            background-color: red;
+        }
+        
+        .two {
+            background-color: blue;
+        }
+        
+        .three {
+            background-color: black;
+        }
+        
+        .four {
+            background-color: orange;
+        }
+        
+        @media screen and (min-width:1200px) {
+            .container {
+                display: flex;
+                width: 1200px;
+            }
+            .container>div {
+                flex-grow: 1;
+            }
+        }
+        
+        @media screen and (min-width:992px) and (max-width:1200px) {
+            .container {
+                display: flex;
+                width: 900px;
+                flex-wrap: wrap;
+            }
+            .one {
+                flex: 0 0 100%;
+            }
+            .container>div:nth-child(n+2) {
+                flex-grow: 1;
+            }
+        }
+        
+        @media screen and (min-width:768px) and (max-width:992px) {
+            .container {
+                display: flex;
+                width: 660px;
+                flex-wrap: wrap;
+            }
+            .container>div {
+                flex: 0 0 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+    </div>
+</body>
+
+</html>
